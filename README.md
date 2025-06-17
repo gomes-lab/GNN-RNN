@@ -31,7 +31,7 @@ Sample crop yield dataset is stored in `data/data_weekly_subset.npz` and the nat
 
 **UPDATE 2025-06-17:** A version of the complete nationwide weekly dataset is now temporarily available here (we are working on a permanent hosting solution): https://drive.google.com/file/d/18rtB3Ab1VQZZcGr451yf0V9fY4yBSlhP/view?usp=drive_link
 
-To use it, set --data_dir to ../data/combined_dataset_weekly.npz in the script.
+To use it, set `--data_dir` to `../data/combined_dataset_weekly.npz` in the script.
 
 ~~Unfortunately, since we are preparing a journal publication, we currently are only able to release a subset of the dataset (Illinois and Iowa), but it should give an idea of the data format.~~
 
