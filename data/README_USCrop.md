@@ -10,7 +10,7 @@ The column names and indices are listed [here](https://docs.google.com/spreadshe
 - Column 1 is year.
 - Columns 2-7 are crop yields for that county and year, for various crops (corn, upland cotton, sorghum, etc.). The data comes from USDA. Note that for each crop, only some counties/years have data.
 
-The remaining columns are input features used by the model (see the linked sheet for the exact column indices). Note that all features are spatially aggregated to the county level, using a weighted average (where each grid cell is weighted by the fraction of the cell that lies inside the county, multiplied by the percentage of the grid cell that is cropland/pasture/grassland). Temporally, all time-dependent features are also aggregated to weekly frequency - for each variable, there is a column for each week.
+The remaining columns are input features used by the model (see the linked sheet for the exact column indices). Note that all features are spatially aggregated to the county level, using a weighted average (where each grid cell is weighted by the fraction of the cell that lies inside the county, multiplied by the percentage of the grid cell that is cropland/pasture/grassland). Temporally, all time-dependent features are also aggregated to weekly or daily frequency - for each variable, there is a column for each week (or day).
 
 ## Weather features
 
