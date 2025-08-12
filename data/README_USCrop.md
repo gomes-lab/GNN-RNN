@@ -12,6 +12,8 @@ The column names and indices are listed [here](https://docs.google.com/spreadshe
 
 The remaining columns are input features used by the model (see the linked sheet for the exact column indices). Note that all features are spatially aggregated to the county level, using a weighted average (where each grid cell is weighted by the fraction of the cell that lies inside the county, multiplied by the percentage of the grid cell that is cropland/pasture/grassland). Temporally, all time-dependent features are also aggregated to weekly frequency - for each variable, there is a column for each week.
 
+## Weather features
+
 Weather features come from the PRISM dataset (Daly and Bryant 2017), with an original spatial resolution of 4 km and a temporal resolution of daily:
 - Precipitation
 - Mean dewpoint temperature
@@ -20,6 +22,8 @@ Weather features come from the PRISM dataset (Daly and Bryant 2017), with an ori
 - Daily minimum temperature
 - Max vapor pressure deficit
 - Min vapor pressure deficit
+
+## Land surface features
 
 Land surface features come from the NLDAS land surface model (Xia et al. 2012), with an original spatial resolution of 0.125 degrees (14 km) and a temporal resolution of hourly:
 - Precipitation hourly total (kg/m2)
@@ -39,6 +43,8 @@ Land surface features come from the NLDAS land surface model (Xia et al. 2012), 
 - Soil temperature (K), 100-200 cm
 - Wind speed (m/s), hourly max
 (Note that the cm ranges represent depths in the soil.)
+
+## Soil quality features
 
 Soil quality features come from the Gridded Soil Survey Geographic Database (gSSURGO) (Soil Survey Staff 2020). The dataset has a 30-m spatial resolution for the continental U.S. These variables do not change over time. However, they vary with depths, which are measured at 6 soil depth layers (0-5cm, 5-15cm, 15-30cm, 30-60cm, 60-100cm, 100-200cm). Because soil quality at a given point can vary substantially within a county, accounting for the location of agricultural activity can be critical when constructing appropriate county-level soil variables. Thus, the “weighted-average” technique is especially important here. We aggregate the fine-scale soil data to the county level based on the percentage of each NLCD Land Cover grid
 cell that was covered by agricultural land (grassland, pasture, cropland) in 2011.
@@ -64,6 +70,8 @@ cell that was covered by agricultural land (grassland, pasture, cropland) in 201
 - pH, which is influenced by chemical reactions between water and the dominant soil component
 Note that features 8-19 were not present in the original gSSURGO dataset. Rather, for each pixel, we used the raw silt, clay, and sand percentages to compute the “soil texture type” of that pixel, based on the National Resources Conservation Service Soil Survey’s classification scheme (Soil Survey 2021). This classification scheme is depicted below. After classifying each pixel’s soil texture type, we compute the fraction of each county that is occupied by each soil
 texture type. 
+
+## Extra features
 
 Extra features also come from the gSSURGO dataset (Soil Survey Staff 2020), but are not depth-dependent. They are listed below:
 - National commodity crop productivity index
