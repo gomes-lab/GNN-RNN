@@ -9,17 +9,17 @@ This readme file was generated on 2025-08-15 by Joshua Fan
 This dataset contains crop yield, weather, soil, and crop progress information for US counties in 1981-2020. Specifically, each row contains data for a unique county and year. There are two versions: one with weekly weather (temporal) data and one with daily weather data. 
 
 ## Author/Principal Investigator Information
-Name: Joshua Fan
-ORCID: 0000-0002-8525-0222
-Institution: Cornell University
-Address: 344 Gates Hall, Cornell University, Ithaca NY 14853
-Email: jyf6@cornell.edu
+Name: Joshua Fan  
+ORCID: 0000-0002-8525-0222  
+Institution: Cornell University  
+Address: 344 Gates Hall, Cornell University, Ithaca NY 14853  
+Email: jyf6@cornell.edu  
 
 ## Author/Associate or Co-investigator Information
-Name: Zhiyun Li
-ORCID: https://orcid.org/0000-0001-8467-6240
-Institution: UCLA Anderson School of Business 
-Email: zhiyun.li@anderson.ucla.edu 
+Name: Zhiyun Li  
+ORCID: 0000-0001-8467-6240  
+Institution: UCLA Anderson School of Business  
+Email: zhiyun.li@anderson.ucla.edu   
 
 * Date of data collection: Data processed 2021-02 to 2021-06, comes from 1981-2020
 * Geographic location of data collection: Contiguous United States
@@ -29,19 +29,24 @@ Email: zhiyun.li@anderson.ucla.edu
 # SHARING/ACCESS INFORMATION
 
 * Licenses/restrictions placed on the data: eCommons Deposit License
-* Links to publications that cite or use the data: Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction.](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193). In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</em>, AI for Social Impact track, 11873-11881.
+* Links to publications that cite or use the data:
+
+	Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction.](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193). In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</em>, AI for Social Impact track, 11873-11881.
+
 * Was data derived from another source? Yes.
 	* If yes, list source(s): 
 	
-	Daly, C.; and Bryant, K. 2017. The PRISM climate and weather system: an introduction. Northwest Alliance for Computational Science and Engineering. Oregon State University, Corvallis, USA.
+		Daly, C.; and Bryant, K. 2017. The PRISM climate and weather system: an introduction. Northwest Alliance for Computational Science and Engineering. Oregon State University, Corvallis, USA.
 
-	Xia, Y.; Mitchell, K.; Ek, M.; Sheffield, J.; Cosgrove, B.; Wood, E.; Luo, L.; Alonge, C.; Wei, H.; Meng, J.; et al. 2012. Continental-scale water and energy flux analysis and validation for the North American Land Data Assimilation System project phase 2 (NLDAS-2): 1. Intercomparison and application of model products. Journal of Geophysical Research: Atmospheres, 117(D3)
+		Xia, Y.; Mitchell, K.; Ek, M.; Sheffield, J.; Cosgrove, B.; Wood, E.; Luo, L.; Alonge, C.; Wei, H.; Meng, J.; et al. 2012. Continental-scale water and energy flux analysis and validation for the North American Land Data Assimilation System project phase 2 (NLDAS-2): 1. Intercomparison and application of model products. Journal of Geophysical Research: Atmospheres, 117(D3)
 
-	Soil Survey Staff. 2020. Gridded Soil Survey Geographic (gSSURGO) Database for the Conterminous United States.
+		Soil Survey Staff. 2020. Gridded Soil Survey Geographic (gSSURGO) Database for the Conterminous United States.
 
-	USDA. 2013. National Agricultural Statistics Service. United States Department of Agriculture.
+		USDA. 2013. National Agricultural Statistics Service. United States Department of Agriculture.
 
-* Recommended citation for this dataset: Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction.](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193).
+* Recommended citation for this dataset: 
+
+	Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction.](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193).
 
 
 # DATA & FILE OVERVIEW
@@ -70,7 +75,7 @@ See Appendix to the [https://arxiv.org/pdf/2111.08900](GNN-RNN paper) for inform
 
 Variables that were originally gridded are spatially aggregated to the county level, using a weighted average (where each grid cell is weighted by the fraction of the cell that lies inside the county, multiplied by the percentage of the grid cell that is cropland/pasture/grassland according to NLCD land cover data). Temporally, all time-dependent features are also aggregated to weekly or daily frequency - for each variable, there is a column for each week (or day).
 
-## Instrument- or software-specific information needed to interpret the data:
+## Software to load teh data;
 
 Example code for loading the data can be found in the [GNN-RNN Github repo](https://github.com/gomes-lab/GNN-RNN).
 
@@ -82,7 +87,6 @@ X/Y matrices for train/validation/test.
 
 
 # DATA-SPECIFIC INFORMATION FOR: combined_dataset_weekly_32bit.npz, combined_dataset_daily_32bit.npz
-*repeat this section for each dataset, folder or file, as appropriate*
 
 * Number of variables: 6322 (weekly), 43569 (daily)
 * Number of cases/rows: 124320
@@ -91,13 +95,15 @@ X/Y matrices for train/validation/test.
 
 ## Variable descriptions
 
+Each row represents a county at a given year (there are 3108 counties in the contiguous US * 40 years between 1981-2020 inclusive).
+
 The column names and indices are listed [here](https://docs.google.com/spreadsheets/d/1hhQ8lGzfgLLyl-gKX13NNboJFywIsJoJOKdttx9hKxE/edit?usp=sharing) (make sure to click the correct tab: daily or weekly). They are also listed in the "column_names_weekly.csv" and "column_names_daily.csv" files.
 
 - Column 0 is the county FIPS code. Lookup codes [here](https://transition.fcc.gov/oet/info/maps/census/fips/fips.txt).
 - Column 1 is year.
 - Columns 2-7 are crop yields for that county and year, for various crops (corn, upland cotton, sorghum, etc.). The data comes from USDA. Note that for each crop, only some counties/years have data.
 
-The remaining columns are input features used by the model (see the linked sheet for the exact column indices).
+The remaining columns are input features used by the model (see the linked sheet for the exact column indices). For temporal features, there is a column for the value at each week/day in the year.
 
 ### Weather features
 
