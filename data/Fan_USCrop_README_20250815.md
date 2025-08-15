@@ -31,22 +31,22 @@ Email: zhiyun.li@anderson.ucla.edu
 * Licenses/restrictions placed on the data: eCommons Deposit License
 * Links to publications that cite or use the data:
 
-		Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193). In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</em>, AI for Social Impact track, 11873-11881.
+	Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193). In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</em>, AI for Social Impact track, 11873-11881.
 
 * Was data derived from another source? Yes.
 	* If yes, list source(s): 
 	
-			Daly, C.; and Bryant, K. 2017. The PRISM climate and weather system: an introduction. Northwest Alliance for Computational Science and Engineering. Oregon State University, Corvallis, USA.
+		Daly, C.; and Bryant, K. 2017. The PRISM climate and weather system: an introduction. Northwest Alliance for Computational Science and Engineering. Oregon State University, Corvallis, USA.
 
-			Xia, Y.; Mitchell, K.; Ek, M.; Sheffield, J.; Cosgrove, B.; Wood, E.; Luo, L.; Alonge, C.; Wei, H.; Meng, J.; et al. 2012. Continental-scale water and energy flux analysis and validation for the North American Land Data Assimilation System project phase 2 (NLDAS-2): 1. Intercomparison and application of model products. Journal of Geophysical Research: Atmospheres, 117(D3)
+		Xia, Y.; Mitchell, K.; Ek, M.; Sheffield, J.; Cosgrove, B.; Wood, E.; Luo, L.; Alonge, C.; Wei, H.; Meng, J.; et al. 2012. Continental-scale water and energy flux analysis and validation for the North American Land Data Assimilation System project phase 2 (NLDAS-2): 1. Intercomparison and application of model products. Journal of Geophysical Research: Atmospheres, 117(D3)
 
-			Soil Survey Staff. 2020. Gridded Soil Survey Geographic (gSSURGO) Database for the Conterminous United States.
+		Soil Survey Staff. 2020. Gridded Soil Survey Geographic (gSSURGO) Database for the Conterminous United States.
 
-			USDA. 2013. National Agricultural Statistics Service. United States Department of Agriculture.
+		USDA. 2013. National Agricultural Statistics Service. United States Department of Agriculture.
 
 * Recommended citation for this dataset: 
 
-		Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193).
+	Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193).
 
 
 # DATA & FILE OVERVIEW
