@@ -31,22 +31,22 @@ Email: zhiyun.li@anderson.ucla.edu
 * Licenses/restrictions placed on the data: eCommons Deposit License
 * Links to publications that cite or use the data:
 
-	Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction.](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193). In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</em>, AI for Social Impact track, 11873-11881.
+		Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193). In <em>Proceedings of the AAAI Conference on Artificial Intelligence (AAAI-22)</em>, AI for Social Impact track, 11873-11881.
 
 * Was data derived from another source? Yes.
 	* If yes, list source(s): 
 	
-		Daly, C.; and Bryant, K. 2017. The PRISM climate and weather system: an introduction. Northwest Alliance for Computational Science and Engineering. Oregon State University, Corvallis, USA.
+			Daly, C.; and Bryant, K. 2017. The PRISM climate and weather system: an introduction. Northwest Alliance for Computational Science and Engineering. Oregon State University, Corvallis, USA.
 
-		Xia, Y.; Mitchell, K.; Ek, M.; Sheffield, J.; Cosgrove, B.; Wood, E.; Luo, L.; Alonge, C.; Wei, H.; Meng, J.; et al. 2012. Continental-scale water and energy flux analysis and validation for the North American Land Data Assimilation System project phase 2 (NLDAS-2): 1. Intercomparison and application of model products. Journal of Geophysical Research: Atmospheres, 117(D3)
+			Xia, Y.; Mitchell, K.; Ek, M.; Sheffield, J.; Cosgrove, B.; Wood, E.; Luo, L.; Alonge, C.; Wei, H.; Meng, J.; et al. 2012. Continental-scale water and energy flux analysis and validation for the North American Land Data Assimilation System project phase 2 (NLDAS-2): 1. Intercomparison and application of model products. Journal of Geophysical Research: Atmospheres, 117(D3)
 
-		Soil Survey Staff. 2020. Gridded Soil Survey Geographic (gSSURGO) Database for the Conterminous United States.
+			Soil Survey Staff. 2020. Gridded Soil Survey Geographic (gSSURGO) Database for the Conterminous United States.
 
-		USDA. 2013. National Agricultural Statistics Service. United States Department of Agriculture.
+			USDA. 2013. National Agricultural Statistics Service. United States Department of Agriculture.
 
 * Recommended citation for this dataset: 
 
-	Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction.](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193).
+		Fan et al. 2022, [A GNN-RNN Approach for Harnessing Geospatial and Temporal Information: Application to Crop Yield Prediction](https://ojs.aaai.org/index.php/AAAI/article/view/21444/21193).
 
 
 # DATA & FILE OVERVIEW
@@ -58,7 +58,7 @@ Email: zhiyun.li@anderson.ucla.edu
 - `Fan_USCrop_DatasetDaily_20250815.npz` contains raw data, with weather/temporal data for each day in the year
 - `Fan_USCrop_ColumnNamesDaily_20250815.csv` contains column names and indices for the daily dataset
 
-* Are there multiple versions of the dataset?
+* Are there multiple versions of the dataset? Yes.
 	* If yes, name of file(s) that was updated: `combined_dataset_weekly.npz` renamed to `Fan_USCrop_DatasetWeekly_20250815.npz`, `column_names.csv` renamed to `Fan_USCrop_ColumnNamesWeekly_20250815.csv`, `README_USCrop.md`  renamed to `Fan_USCrop_README_20250815.md`. Also added `Fan_USCrop_DatasetDaily_20250815.npz`, `Fan_USCrop_ColumnNamesDaily_20250815.csv`
 	* Why was the file updated? Weekly .npz dataset was changed to use 32-bit numbers instead of 64-bit, reducing file size by half. Daily dataset was added. 
 	* When was the file updated? 15 August 2025
@@ -68,14 +68,14 @@ Email: zhiyun.li@anderson.ucla.edu
 
 ## Description of methods used for collection/generation of data: 
 
-See Appendix to the [https://arxiv.org/pdf/2111.08900](GNN-RNN paper) for information on how the data was collected and processed.
+See Appendix to the [GNN-RNN paper](https://arxiv.org/pdf/2111.08900) for information on how the data was collected and processed.
 
 
 ## Methods for processing the data: 
 
 Variables that were originally gridded are spatially aggregated to the county level, using a weighted average (where each grid cell is weighted by the fraction of the cell that lies inside the county, multiplied by the percentage of the grid cell that is cropland/pasture/grassland according to NLCD land cover data). Temporally, all time-dependent features are also aggregated to weekly or daily frequency - for each variable, there is a column for each week (or day).
 
-## Software to load teh data;
+## Software to load the data:
 
 Example code for loading the data can be found in the [GNN-RNN Github repo](https://github.com/gomes-lab/GNN-RNN).
 
@@ -95,7 +95,7 @@ X/Y matrices for train/validation/test.
 
 ## Variable descriptions
 
-Each row represents a county at a given year (there are 3108 counties in the contiguous US * 40 years between 1981-2020 inclusive).
+Each row represents a county at a given year (3108 counties in the contiguous US * 40 years between 1981-2020 inclusive).
 
 The column names and indices are listed [here](https://docs.google.com/spreadsheets/d/1hhQ8lGzfgLLyl-gKX13NNboJFywIsJoJOKdttx9hKxE/edit?usp=sharing) (make sure to click the correct tab: daily or weekly). They are also listed in the "column_names_weekly.csv" and "column_names_daily.csv" files.
 
